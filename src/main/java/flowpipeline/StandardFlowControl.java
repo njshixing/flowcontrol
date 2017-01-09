@@ -72,10 +72,6 @@ public class StandardFlowControl<INPUT , OUTPUT> implements FlowControl<INPUT , 
             this.output = output;
         }
 
-        private void start(){
-            doNext();
-        }
-
         public void doNext() {
             index++;
             if(index >= handlers.size()){
