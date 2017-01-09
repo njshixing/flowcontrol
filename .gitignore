@@ -1,0 +1,9 @@
+.idea/*
+target
+.DS_Store
+log
+logs
+Makefile
+*.data
+*.iml
+*/*.iml
