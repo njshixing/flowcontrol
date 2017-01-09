@@ -40,12 +40,12 @@ public class StandardFlowControl<INPUT , OUTPUT> implements FlowControl<INPUT , 
 
     public synchronized void registerHandlerAtAfter(FlowHandler<INPUT, OUTPUT> handler, FlowHandler<INPUT, OUTPUT> after) {
         ensureIsNotReady();
-        int beforeIdx = handlers.indexOf(after);
-        if(beforeIdx < 0){
+        int afterIdx = handlers.indexOf(after);
+        if(afterIdx < 0){
             throw new RuntimeException("before handler [" + after + " ] not found");
         }
-        beforeIdx++;
-        handlers.add(beforeIdx , handler);
+        afterIdx++;
+        handlers.add(afterIdx , handler);
     }
 
     public synchronized void ready() {
